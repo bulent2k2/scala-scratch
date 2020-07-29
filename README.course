@@ -1,0 +1,119 @@
+* ./evren: Updated assignments while Evren was taking the course.. 
+old one in ./recfun for example no longer compiles..
+* some good stuff:
+.   cTailRecursion.sc      1548 Scala            ~/src/scala/course/eclipse/procfun/src/week1/cTailRecursion.sc
+ %  week1                   724 Dired by name    /Users/bulentbasaran/src/scala/course/eclipse/procfun/src/week1/
+    Pouring.scala          1861 Scala            ~/src/scala/course/eclipse/pouring-water/src/Pouring.scala
+    Anagrams.scala<c...    4659 Scala            ~/src/scala/course/forcomp/src/main/scala/forcomp/Anagrams.scala
+* sbt on forcomp (for last assignment):
+cd ./forcomp
+sbt
+compile
+console
+import forcomp.Anagrams
+Anagrams.wordOccurrences("abccba")
+
+* Conclusion on Functional Programming
+  1) higher order functions (functions composed from basic functions)
+  2) case classes (to combine/represent data) and pattern matching (to decompose the data)
+  3) immutable collections (see below)
+  4) absence of mutable state
+  5) flexible evaluation strategies (lazy; strict vs by name)
+* Conclusion on Scala's immutable data structures:
+  1) easy to use: few steps to do the job (rich set of methods)
+  2) concise: one word replaces a whole loop (foreach -> map)
+  3) safe: type checker is really good at catching errors.
+  4) fast: collection ops are tuned, can be parallelized
+  5) universal: one vocabulary to work on all kinds of collections
+  => Very attractive tool for software development
+  See example in: ~/src/scala/course/example/src/main/scala/example/phonenum2words.scala
+  See sbt below to build and run
+* ./eclipse/procfun/src/
+** New: ./eclipse/week6/
+~/Documents/src/scala/course/eclipse/week6/src/polynomials.sc
+./eclipse/week6/src/combinations.sc
+./eclipse/week6/src/collections.sc
+./eclipse/week6/src/for_expr.sc
+** Old: ~/src/scala/course/eclipse/procfun/src/week6
+   ~/src/scala/course/eclipse/procfun/src/week6/forcomp.sc
+*  <week> <name>   <description>
+** -----  ------   -------------
+* 0-any   example  use as scratch with sbt Scala's Build Tool
+see: ~/Documents/src/scala/course/example/src/main/scala/Main.scala
+cd ./example
+sbt
+run
+< can also compile without running: >
+compile
+run 
+* 6       forcomp  collections and for-comprehensions: anagrams
+Archive:  forcomp.zip
+   creating: forcomp/
+   creating: forcomp/project/
+   creating: forcomp/src/
+   creating: forcomp/src/main/
+   creating: forcomp/src/main/resources/
+   creating: forcomp/src/main/resources/forcomp/
+   creating: forcomp/src/main/scala/
+   creating: forcomp/src/main/scala/common/
+   creating: forcomp/src/main/scala/forcomp/
+   creating: forcomp/src/test/
+   creating: forcomp/src/test/scala/
+   creating: forcomp/src/test/scala/forcomp/
+  inflating: forcomp/src/main/scala/common/package.scala  
+  inflating: forcomp/src/main/resources/forcomp/linuxwords.txt  
+  inflating: forcomp/src/main/scala/forcomp/package.scala  
+  inflating: forcomp/src/main/scala/forcomp/Anagrams.scala  
+  inflating: forcomp/build.sbt       
+  inflating: forcomp/assignment.sbt  
+  inflating: forcomp/src/test/scala/forcomp/AnagramsSuite.scala  
+  inflating: forcomp/project/build.properties  
+  inflating: forcomp/project/CommonBuild.scala  
+  inflating: forcomp/project/ScalaTestRunner.scala  
+  inflating: forcomp/project/plugins.sbt  
+  inflating: forcomp/project/StyleChecker.scala  
+  inflating: forcomp/project/GradingFeedback.scala  
+  inflating: forcomp/project/Settings.scala  
+  inflating: forcomp/project/buildSettings.sbt  
+  inflating: forcomp/project/StudentBuildLike.scala  
+  inflating: forcomp/project/StudentBuild.scala  
+* 5       no :-(   lists...
+* 4       patmat   pattern matching with case classes: huffman coding
+~/src/scala/course/funsets/src/test/scala/funsets/FunSetSuite.scala
+
+Archive:  patmat.zip
+   creating: patmat/
+   creating: patmat/project/
+   creating: patmat/src/
+   creating: patmat/src/main/
+   creating: patmat/src/main/scala/
+   creating: patmat/src/main/scala/common/
+   creating: patmat/src/main/scala/patmat/
+   creating: patmat/src/test/
+   creating: patmat/src/test/scala/
+   creating: patmat/src/test/scala/patmat/
+  inflating: patmat/src/main/scala/common/package.scala  
+  inflating: patmat/src/main/scala/patmat/Huffman.scala  
+  inflating: patmat/build.sbt        
+  inflating: patmat/assignment.sbt   
+  inflating: patmat/src/test/scala/patmat/HuffmanSuite.scala  
+  inflating: patmat/project/build.properties  
+  inflating: patmat/project/CommonBuild.scala  
+  inflating: patmat/project/ScalaTestRunner.scala  
+  inflating: patmat/project/plugins.sbt  
+  inflating: patmat/project/StyleChecker.scala  
+  inflating: patmat/project/GradingFeedback.scala  
+  inflating: patmat/project/Settings.scala  
+  inflating: patmat/project/buildSettings.sbt  
+  inflating: patmat/project/StudentBuildLike.scala  
+  inflating: patmat/project/StudentBuild.scala  
+* 3       objsets  object oriented sets: tweet-set Tweets: Set, Data, Reader
+* 2       funsets  purely functional sets with characteristic function
+* 1       recfun   recursion: pascal, coin-combos, balancing parantheses
+** ------------------------------
+* There are two places to look at:
+** One for sbt (and optionally for intellij), e.g., 
+*** ./patmat/src/main/scala/patmat/Huffman.scala
+** and one for eclipse:
+*** ./eclipse/procfun/src/week4/huffman.scala
+* The end

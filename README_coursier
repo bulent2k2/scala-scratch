@@ -1,0 +1,364 @@
+* https://get-coursier.io/docs/cli-overview
+
+Referenced from README_shapeless
+
+* Alternatively on OS X, install it via homebrew, that puts the coursier launcher directly in your PATH:
+
+$ brew tap coursier/formulas
+$ brew install coursier/formulas/coursier
+
+** Original:
+$ curl -Lo coursier https://git.io/coursier-cli &&
+    chmod +x coursier &&
+    ./coursier --help
+
+* Log:
+** bash-3.2:~/Documents$ which brew
+/usr/local/bin/brew
+** bash-3.2:~/Documents$ brew tap coursier/formulas
+==> Tapping coursier/formulas
+Cloning into '/usr/local/Homebrew/Library/Taps/coursier/homebrew-formulas'...
+fatal: unable to access 'https://github.com/coursier/homebrew-formulas/': Could not resolve host: github.com
+Error: Failure while executing; `git clone https://github.com/coursier/homebrew-formulas /usr/local/Homebrew/Library/Taps/coursier/homebrew-formulas --depth=1` exited with 128.
+** bash-3.2:~/Documents$ brew tap coursier/formulas
+==> Tapping coursier/formulas
+Cloning into '/usr/local/Homebrew/Library/Taps/coursier/homebrew-formulas'...
+remote: Enumerating objects: 4, done.        
+remote: Counting objects: 100% (4/4), done.        
+remote: Compressing objects: 100% (4/4), done.        
+remote: Total 4 (delta 0), reused 3 (delta 0), pack-reused 0        
+Unpacking objects: 100% (4/4), done.
+Tapped 1 formula (28 files, 21.3KB).
+** bash-3.2:~/Documents$ brew install coursier/formulas/coursier
+==> Installing coursier from coursier/formulas
+==> Downloading https://github.com/coursier/coursier/releases/download/v1.1.0-M14-3/co
+==> Downloading from https://github-production-release-asset-2e65be.s3.amazonaws.com/3
+############################################################################### 100.0%
+==> bash -c bash ./coursier --completions zsh > completions/zsh/_coursier
+==> Caveats
+zsh completions have been installed to:
+  /usr/local/share/zsh/site-functions
+==> Summary
+🍺  /usr/local/Cellar/coursier/1.1.0-M14-3: 4 files, 27.6KB, built in 11 seconds
+** bash-3.2:~/Documents$ which coursier
+which coursier
+/usr/local/bin/coursier
+** bash-3.2:~/Documents$ coursier --help
+coursier --help
+Downloaded 1 missing file(s) / 1
+Coursier 1.1.0-M14-3
+Usage: coursier [options] [command] [command-options]
+
+Available commands: bootstrap, complete, fetch, launch, resolve, spark-submit
+
+Type  coursier command --help  for help on an individual command
+** bash-3.2:~/Documents$ coursier --help
+coursier --help
+Coursier 1.1.0-M14-3
+Usage: coursier [options] [command] [command-options]
+
+Available commands: bootstrap, complete, fetch, launch, resolve, spark-submit
+
+Type  coursier command --help  for help on an individual command
+** bash-3.2:~/Documents$ coursier fetch --help
+coursier fetch --help
+Command: fetch
+Usage: coursier fetch 
+  --classpath | -p  <bool>
+        Print java -cp compatible output
+  --json-output-file | -j  <string>
+        Specify path for json output
+  --benchmark | -B  <# warm-up resolutions>
+        Print the duration of each iteration of the resolution (if negative, doesn't print per iteration benchmark -> less overhead)
+  --benchmark-cache  <bool>
+  --tree | -t  <bool>
+        Print dependencies as a tree
+  --reverse-tree | -T  <bool>
+        Print dependencies as an inversed tree (dependees as children)
+  --what-depends-on  <org:name>
+        Print what depends on the passed modules
+  --conflicts  <bool>
+        Print conflicts
+  --cache  <string>
+        Cache directory (defaults to environment variable COURSIER_CACHE, or ~/.cache/coursier/v1 on Linux and ~/Library/Caches/Coursier/v1 on Mac)
+  --mode | -m  <offline|update-changing|update|missing|force>
+        Download mode (default: missing, that is fetch things missing from cache)
+  --ttl | -l  <duration>
+        TTL duration (e.g. "24 hours")
+  --parallel | -n  <int>
+        Maximum number of parallel downloads (default: 6)
+  --checksum  <checksum1,checksum2,...>
+        Checksum types to check - end with none to allow for no checksum validation if no checksum is available, example: SHA-256,SHA-1,none
+  --retry-count  <int>
+        Retry limit for Checksum error when fetching a file
+  --cache-file-artifacts | --cfa  <bool>
+        Flag that specifies if a local artifact should be cached.
+  --follow-http-to-https-redirect  <bool>
+        Whether to follow http to https redirections
+  --credentials  <host(realm) user:pass|host user:pass>
+        Credentials to be used when fetching metadata or artifacts. Specify multiple times to pass multiple credentials. Alternatively, use the COURSIER_CREDENTIALS environment variable
+  --credential-file  <string*>
+        Path to credential files to read credentials from
+  --use-env-credentials  <bool>
+        Whether to read credentials from COURSIER_CREDENTIALS (env) or coursier.credentials (Java property), along those passed with --credentials and --credential-file
+  --repository | -r  <maven|sonatype:$repo|ivy2local|bintray:$org/$repo|bintray-ivy:$org/$repo|typesafe:ivy-$repo|typesafe:$repo|sbt-plugin:$repo|ivy:$pattern>
+        Repository - for multiple repositories, separate with comma and/or add this option multiple times (e.g. -r central,ivy2local -r sonatype:snapshots, or equivalently -r central,ivy2local,sonatype:snapshots)
+  --no-default  <bool>
+        Do not add default repositories (~/.ivy2/local, and Central)
+  --sbt-plugin-hack  <bool>
+        Modify names in Maven repository paths for SBT plugins
+  --drop-info-attr  <bool>
+        Drop module attributes starting with 'info.' - these are sometimes used by projects built with SBT
+  --keep-optional  <bool>
+        Keep optional dependencies (Maven)
+  --max-iterations | -N  <int>
+        Maximum number of resolution iterations (specify a negative value for unlimited, default: 100)
+  --force-version | -V  <organization:name:forcedVersion>
+        Force module version
+  --property  <name=value>
+        Set property in POM files, if it's not already set
+  --force-property  <name=value>
+        Force property in POM files
+  --profile | -F  <profile>
+        Enable profile
+  --scala-version | -e  <string?>
+        Default scala version
+  --force-scala-version  <bool?>
+        Ensure the scala version used by the scala-library/reflect/compiler JARs is coherent, and adjust the scala version for fully cross-versioned dependencies
+  --typelevel  <bool>
+        Swap the mainline Scala JARs by Typelevel ones
+  --rules | --rule  <string*>
+        Enforce resolution rules
+  --exclude | -E  <organization:name>
+        Exclude module
+  --local-exclude-file | -x  <string>
+        Path to the local exclusion file. Syntax: <org:name>--<org:name>. `--` means minus. Example file content:
+		com.twitter.penguin:korean-text--com.twitter:util-tunable-internal_2.11
+		org.apache.commons:commons-math--com.twitter.search:core-query-nodes
+	Behavior: If root module A excludes module X, but root module B requires X, module X will still be fetched.
+  --sbt-version  <sbt version>
+        If --sbt-plugin options are passed: default sbt version  (short version X.Y is enough - note that for sbt 1.x, this should be passed 1.0)
+  --intransitive  <string*>
+        Add intransitive dependencies
+  --sbt-plugin  <string*>
+        Add sbt plugin dependencies
+  --scaladex  <string*>
+        Add dependencies via Scaladex lookups
+  --default-configuration | -c  <configuration>
+        Default configuration (default(compile) by default)
+  --quiet | -q  <counter>
+        Quiet output
+  --verbose | -v  <counter>
+        Increase verbosity (specify several times to increase more)
+  --progress | -P  <bool>
+        Force display of progress bars
+  --force | -f  <bool>
+        Force printing / generating results, even if errored
+  --classifier | -C  <classifier1,classifier2,...>
+        Classifiers that should be fetched
+  --sources  <bool>
+        Fetch source artifacts
+  --javadoc  <bool>
+        Fetch javadoc artifacts
+  --default  <bool?>
+        Fetch default artifacts (default: false if --sources or --javadoc or --classifier are passed, true else)
+  --artifact-type | -A  <type1,type2,...>
+        Artifact types that should be retained (e.g. jar, src, doc, etc.) - defaults to jar,bundle
+  --force-fetch  <bool>
+        Fetch artifacts even if the resolution is errored
+
+** bash-3.2:~/Documents$ coursier launch --help
+coursier launch --help
+Command: launch
+Usage: coursier launch 
+  --main-class | -M | --main  <string>
+  --extra-jars | -J  <string*>
+        Extra JARs to be added to the classpath of the launched application. Directories accepted too.
+  --shared | -I | --isolated  <target:dependency>
+        Dependencies to be put in shared class loaders
+  --shared-target | -i | --isolate-target  <string*>
+        Comma-separated isolation targets
+  --benchmark | -B  <# warm-up resolutions>
+        Print the duration of each iteration of the resolution (if negative, doesn't print per iteration benchmark -> less overhead)
+  --benchmark-cache  <bool>
+  --tree | -t  <bool>
+        Print dependencies as a tree
+  --reverse-tree | -T  <bool>
+        Print dependencies as an inversed tree (dependees as children)
+  --what-depends-on  <org:name>
+        Print what depends on the passed modules
+  --conflicts  <bool>
+        Print conflicts
+  --cache  <string>
+        Cache directory (defaults to environment variable COURSIER_CACHE, or ~/.cache/coursier/v1 on Linux and ~/Library/Caches/Coursier/v1 on Mac)
+  --mode | -m  <offline|update-changing|update|missing|force>
+        Download mode (default: missing, that is fetch things missing from cache)
+  --ttl | -l  <duration>
+        TTL duration (e.g. "24 hours")
+  --parallel | -n  <int>
+        Maximum number of parallel downloads (default: 6)
+  --checksum  <checksum1,checksum2,...>
+        Checksum types to check - end with none to allow for no checksum validation if no checksum is available, example: SHA-256,SHA-1,none
+  --retry-count  <int>
+        Retry limit for Checksum error when fetching a file
+  --cache-file-artifacts | --cfa  <bool>
+        Flag that specifies if a local artifact should be cached.
+  --follow-http-to-https-redirect  <bool>
+        Whether to follow http to https redirections
+  --credentials  <host(realm) user:pass|host user:pass>
+        Credentials to be used when fetching metadata or artifacts. Specify multiple times to pass multiple credentials. Alternatively, use the COURSIER_CREDENTIALS environment variable
+  --credential-file  <string*>
+        Path to credential files to read credentials from
+  --use-env-credentials  <bool>
+        Whether to read credentials from COURSIER_CREDENTIALS (env) or coursier.credentials (Java property), along those passed with --credentials and --credential-file
+  --repository | -r  <maven|sonatype:$repo|ivy2local|bintray:$org/$repo|bintray-ivy:$org/$repo|typesafe:ivy-$repo|typesafe:$repo|sbt-plugin:$repo|ivy:$pattern>
+        Repository - for multiple repositories, separate with comma and/or add this option multiple times (e.g. -r central,ivy2local -r sonatype:snapshots, or equivalently -r central,ivy2local,sonatype:snapshots)
+  --no-default  <bool>
+        Do not add default repositories (~/.ivy2/local, and Central)
+  --sbt-plugin-hack  <bool>
+        Modify names in Maven repository paths for SBT plugins
+  --drop-info-attr  <bool>
+        Drop module attributes starting with 'info.' - these are sometimes used by projects built with SBT
+  --keep-optional  <bool>
+        Keep optional dependencies (Maven)
+  --max-iterations | -N  <int>
+        Maximum number of resolution iterations (specify a negative value for unlimited, default: 100)
+  --force-version | -V  <organization:name:forcedVersion>
+        Force module version
+  --property  <name=value>
+        Set property in POM files, if it's not already set
+  --force-property  <name=value>
+        Force property in POM files
+  --profile | -F  <profile>
+        Enable profile
+  --scala-version | -e  <string?>
+        Default scala version
+  --force-scala-version  <bool?>
+        Ensure the scala version used by the scala-library/reflect/compiler JARs is coherent, and adjust the scala version for fully cross-versioned dependencies
+  --typelevel  <bool>
+        Swap the mainline Scala JARs by Typelevel ones
+  --rules | --rule  <string*>
+        Enforce resolution rules
+  --exclude | -E  <organization:name>
+        Exclude module
+  --local-exclude-file | -x  <string>
+        Path to the local exclusion file. Syntax: <org:name>--<org:name>. `--` means minus. Example file content:
+		com.twitter.penguin:korean-text--com.twitter:util-tunable-internal_2.11
+		org.apache.commons:commons-math--com.twitter.search:core-query-nodes
+	Behavior: If root module A excludes module X, but root module B requires X, module X will still be fetched.
+  --sbt-version  <sbt version>
+        If --sbt-plugin options are passed: default sbt version  (short version X.Y is enough - note that for sbt 1.x, this should be passed 1.0)
+  --intransitive  <string*>
+        Add intransitive dependencies
+  --sbt-plugin  <string*>
+        Add sbt plugin dependencies
+  --scaladex  <string*>
+        Add dependencies via Scaladex lookups
+  --default-configuration | -c  <configuration>
+        Default configuration (default(compile) by default)
+  --quiet | -q  <counter>
+        Quiet output
+  --verbose | -v  <counter>
+        Increase verbosity (specify several times to increase more)
+  --progress | -P  <bool>
+        Force display of progress bars
+  --force | -f  <bool>
+        Force printing / generating results, even if errored
+  --classifier | -C  <classifier1,classifier2,...>
+        Classifiers that should be fetched
+  --sources  <bool>
+        Fetch source artifacts
+  --javadoc  <bool>
+        Fetch javadoc artifacts
+  --default  <bool?>
+        Fetch default artifacts (default: false if --sources or --javadoc or --classifier are passed, true else)
+  --artifact-type | -A  <type1,type2,...>
+        Artifact types that should be retained (e.g. jar, src, doc, etc.) - defaults to jar,bundle
+  --force-fetch  <bool>
+        Fetch artifacts even if the resolution is errored
+  --benchmark | -B  <Number of warm-up resolutions - if negative, doesn't print per iteration benchmark (less overhead)>
+        Print the duration of each iteration of the resolution
+  --tree | -t  <bool>
+        Print dependencies as a tree
+  --reverse-tree | -T  <bool>
+        Print dependencies as an inversed tree (dependees as children)
+  --json-output-file | -j  <string>
+        Specify path for json output
+  --cache  <string>
+        Cache directory (defaults to environment variable COURSIER_CACHE, or ~/.cache/coursier/v1 on Linux and ~/Library/Caches/Coursier/v1 on Mac)
+  --mode | -m  <offline|update-changing|update|missing|force>
+        Download mode (default: missing, that is fetch things missing from cache)
+  --ttl | -l  <duration>
+        TTL duration (e.g. "24 hours")
+  --parallel | -n  <int>
+        Maximum number of parallel downloads (default: 6)
+  --checksum  <checksum1,checksum2,...>
+        Checksum types to check - end with none to allow for no checksum validation if no checksum is available, example: SHA-256,SHA-1,none
+  --retry-count  <int>
+        Retry limit for Checksum error when fetching a file
+  --cache-file-artifacts | --cfa  <bool>
+        Flag that specifies if a local artifact should be cached.
+  --follow-http-to-https-redirect  <bool>
+        Whether to follow http to https redirections
+  --credentials  <host(realm) user:pass|host user:pass>
+        Credentials to be used when fetching metadata or artifacts. Specify multiple times to pass multiple credentials. Alternatively, use the COURSIER_CREDENTIALS environment variable
+  --credential-file  <string*>
+        Path to credential files to read credentials from
+  --use-env-credentials  <bool>
+        Whether to read credentials from COURSIER_CREDENTIALS (env) or coursier.credentials (Java property), along those passed with --credentials and --credential-file
+  --repository | -r  <maven|sonatype:$repo|ivy2local|bintray:$org/$repo|bintray-ivy:$org/$repo|typesafe:ivy-$repo|typesafe:$repo|sbt-plugin:$repo|ivy:$pattern>
+        Repository - for multiple repositories, separate with comma and/or add this option multiple times (e.g. -r central,ivy2local -r sonatype:snapshots, or equivalently -r central,ivy2local,sonatype:snapshots)
+  --no-default  <bool>
+        Do not add default repositories (~/.ivy2/local, and Central)
+  --sbt-plugin-hack  <bool>
+        Modify names in Maven repository paths for SBT plugins
+  --drop-info-attr  <bool>
+        Drop module attributes starting with 'info.' - these are sometimes used by projects built with SBT
+  --keep-optional  <bool>
+        Keep optional dependencies (Maven)
+  --max-iterations | -N  <int>
+        Maximum number of resolution iterations (specify a negative value for unlimited, default: 100)
+  --force-version | -V  <organization:name:forcedVersion>
+        Force module version
+  --property  <name=value>
+        Set property in POM files, if it's not already set
+  --force-property  <name=value>
+        Force property in POM files
+  --profile | -F  <profile>
+        Enable profile
+  --scala-version | -e  <string?>
+        Default scala version
+  --force-scala-version  <bool?>
+        Ensure the scala version used by the scala-library/reflect/compiler JARs is coherent, and adjust the scala version for fully cross-versioned dependencies
+  --typelevel  <bool>
+        Swap the mainline Scala JARs by Typelevel ones
+  --rules | --rule  <string*>
+        Enforce resolution rules
+  --exclude | -E  <organization:name>
+        Exclude module
+  --local-exclude-file | -x  <string>
+        Path to the local exclusion file. Syntax: <org:name>--<org:name>. `--` means minus. Example file content:
+		com.twitter.penguin:korean-text--com.twitter:util-tunable-internal_2.11
+		org.apache.commons:commons-math--com.twitter.search:core-query-nodes
+	Behavior: If root module A excludes module X, but root module B requires X, module X will still be fetched.
+  --sbt-version  <sbt version>
+        If --sbt-plugin options are passed: default sbt version  (short version X.Y is enough - note that for sbt 1.x, this should be passed 1.0)
+  --intransitive  <string*>
+        Add intransitive dependencies
+  --sbt-plugin  <string*>
+        Add sbt plugin dependencies
+  --scaladex  <string*>
+        Add dependencies via Scaladex lookups
+  --default-configuration | -c  <configuration>
+        Default configuration (default(compile) by default)
+  --quiet | -q  <counter>
+        Quiet output
+  --verbose | -v  <counter>
+        Increase verbosity (specify several times to increase more)
+  --progress | -P  <bool>
+        Force display of progress bars
+  --force | -f  <bool>
+        Force printing / generating results, even if errored
+
+** bash-3.2:~/Documents$ 
+* The End

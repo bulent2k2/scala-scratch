@@ -1,0 +1,8 @@
+/* Use in amm as:
+ *  cd
+ *  amm
+ *  import $file.src.scala.least_power.t1
+ *  t1.<TAB>
+ */
+
+// See: ~/src/scala/amm.sc

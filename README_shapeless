@@ -1,0 +1,40 @@
+* log: Also see: ./README_coursier
+import $ivy.`com.chuusai::shapeless:2.3.3`, shapeless._
+** ~/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3
+** bash-3.2:~/Documents$ coursier fetch com.chuusai:shapeless_2.12:2.3.3
+coursier fetch com.chuusai:shapeless_2.12:2.3.3
+Downloading https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.pom
+Downloading https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.pom.sha1
+Downloaded https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.pom.sha1
+Downloaded https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.pom
+Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.pom.sha1
+Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.pom
+Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.pom.sha1
+Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.pom
+Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.jar
+Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.jar.sha1
+Downloading https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.jar.sha1
+Downloading https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.jar
+Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.jar.sha1
+Downloaded https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.jar.sha1
+Downloaded https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.jar
+Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.jar
+/Users/bulentbasaran/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.jar
+/Users/bulentbasaran/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.4/scala-library-2.12.4.jar
+/Users/bulentbasaran/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/macro-compat_2.12/1.1.1/macro-compat_2.12-1.1.1.jar
+bash-3.2:~/Documents$ 
+* From: https://github.com/milessabin/shapeless
+Reference from: https://swsnr.de/blog/2018/02/24/algebraic-data-types-in-scala/#fnref:abstract
+
+* https://raw.githubusercontent.com/milessabin/shapeless/master/scripts/try-shapeless.sh
+
+#!/bin/sh
+COURSIER_URL=https://git.io/vgvpD
+test -e ~/.coursier/coursier || \
+  (mkdir -p ~/.coursier && curl -L -s --output ~/.coursier/coursier $COURSIER_URL && chmod +x ~/.coursier/coursier)
+~/.coursier/coursier launch -q -P \
+  com.lihaoyi:ammonite_2.12.4:1.0.3 \
+  com.chuusai:shapeless_2.12:2.3.3 \
+  -- --predef-code 'import shapeless._' < /dev/tty
+
+* The End

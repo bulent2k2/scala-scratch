@@ -1,0 +1,40 @@
+* I have sbt 1.2.8 and scala 2.12.8 as default..
+  sbt about
+  scala
+
+bash-3.2:~/src/scala/course/recfun$ cd ; sbt; cd -
+[info] Loading settings for project global-plugins from plugins.sbt ...
+[info] Loading global plugins from /Users/bulentbasaran/.sbt/1.0/plugins
+[info] Loading settings for project bulentbasaran-build from build.sbt ...
+[info] Loading project definition from /Users/bulentbasaran/project
+[info] Updating ProjectRef(uri("file:/Users/bulentbasaran/project/"), "bulentbasaran-build")...
+[info] Done updating.
+[info] Set current project to bulentbasaran (in build file:/Users/bulentbasaran/)
+[info] sbt server started at local:///Users/bulentbasaran/.sbt/1.0/server/4df7fa87cabbdafb6823/sock
+sbt:bulentbasaran> about
+[info] This is sbt 1.2.8
+[info] The current project is ProjectRef(uri("file:/Users/bulentbasaran/"), "bulentbasaran") 0.1.0-SNAPSHOT
+[info] The current project is built against Scala 2.12.7
+[info] Available Plugins
+[info]  - org.ensime.EnsimeCoursierPlugin
+[info]  - org.ensime.EnsimeExtrasPlugin
+[info]  - org.ensime.EnsimePlugin
+[info]  - sbt.ScriptedPlugin
+[info]  - sbt.plugins.CorePlugin
+[info]  - sbt.plugins.Giter8TemplatePlugin
+[info]  - sbt.plugins.IvyPlugin
+[info]  - sbt.plugins.JUnitXmlReportPlugin
+[info]  - sbt.plugins.JvmPlugin
+[info]  - sbt.plugins.SbtPlugin
+[info] sbt, sbt plugins, and build definitions are using Scala 2.12.7
+sbt:bulentbasaran> exit
+[info] shutting down server
+/Users/bulentbasaran/src/scala/course/recfun
+bash-3.2:~/src/scala/course/recfun$ 
+* want to run ammonite instead of sbt console/repl?
+Just do:
+    sbt
+    test:run
+
+* see for more details:  ~/.sbt/1.0/global.sbt
+

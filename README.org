@@ -1,0 +1,34 @@
+* This was abandoned back in December of 2016. The new stuff is in:
+~/Downloads/scala/example
+
+./src has some new sample code (April 2019) 
+./project is created by sbt.. 
+
+Completed April 17, 2019 (:-)
+
+* TODO read and improve ~/Downloads/scala/example/src/test/scala/example/ListsSuite.scala
+
+and so on..
+
+but, the old stuff has good stuff under:
+  ~/src/scala/course2/example/src/main/scala/example/week1
+  ~/src/scala/course2/example/src/main/scala/example/week2
+  ~/src/scala/course2/example/src/main/scala/example/week3
+  ~/src/scala/course2/example/src/main/scala/example/week4
+
+~/src/scala/course2/example/src/main/scala/example/week1/README_class_notes.org
+
+* ===
+* Old
+* ===
+
+.   README_class_not...    5429 Org              ~/src/scala/course2/example/src/main/scala/example/week1/README_class_notes.org
+    funRanGen.scala        5564 Scala            ~/src/scala/course2/example/src/main/scala/example/week1/funRanGen.scala
+
+* week4: calculator
+* week3: quick check
+* week2: streams
+* week1: <no assignment>
+* week0: example
+* The end
+

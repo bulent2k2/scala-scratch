@@ -1,0 +1,21 @@
+* Do (TAB completion works only in Terminal):
+cd ~/src/scala
+amm
+import $file.adt
+import $file.sless
+shapeless.Generic[(Int, String)].to(adt.ornek1)
+shapeless.Generic[adt.Kisi].to(adt.ornek2)
+adt.<TAB>
+sless.<TAB>
+shapeless.Generic[adt.Kisi].<TAB>
+shapeless.Generic[adt.Kisi].Repr<TAB>
+* Algebraic Data Types:
+https://swsnr.de/blog/2018/02/24/algebraic-data-types-in-scala/#fnref:abstract
+
+** product types
+(42, "Donald Duck")
+
+** sum types
+
+* The End
+

@@ -1,0 +1,49 @@
+* Use amm shell to get completions! (Use terminal. Doesn't work in emacs-shell)
+see: ~/src/scala/amm/README_amm
+* Simple to get things going:
+** locally:
+cd ~/src/scala/course/example
+sbt
+run
+console
+** on the web:
+https://scastie.scala-lang.org/bulent2k2/J0nQzwvPQ1m8cYebuoMOMw/30
+
+Also here: 
+./scastie/30
+* Eclipse works, too! Just use with sbt.. E.g., ./f2c/README
+* IP ./course4 scala reactive programming (EDX!)
+* IP ./course3 scala parallel programming
+* Passed ./course2 scala functional/reactive program design
+   ~/src/scala/course2/example/src/main/scala/example/week1/README_class_notes.org
+   ~/src/scala/course2/example/src/main/scala/example/week1/funRanGen.scala
+** Class notes/code: 
+~/src/scala/course/example/
+* Passed ./course  scala functional programming principles
+** also has worksheets for course2:
+  ./course/eclipse/course2/src/week1/functions.sc
+* ./observatory capstone project..
+* ./scala-master is from github, my earlier solutions (first time I took the course, but didn't have time to finish it all :-()
+* sbt
+# need project structure & build.sbt to run sbt:
+$ cd ~/src/scala/course/example
+$ /usr/local/bin/sbt
+> console
+scala> println("hi kids!")
+scala> val x = 3.14
+scala> val l = List(0,1,2,3,4)
+l: List[Int] = List(0, 1, 2, 3, 4)
+
+scala> val squares = l.map(x => x * x)
+squares: List[Int] = List(0, 1, 4, 9, 16)
+
+<ctrl-d> to quit
+
+> compile
+> test
+> run
+> console
+import <package>.<object>._
+<have prog fun>
+
+* the end

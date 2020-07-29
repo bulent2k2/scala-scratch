@@ -1,0 +1,43 @@
+* Newer:
+
+https://scalameta.org/metals/docs/editors/emacs.html
+
+
+
+* Older:
+
+http://ensime.github.io/build_tools/sbt/
+
+see: ~/.sbt/1.0/plugins/plugins.sbt
+
+try (in emacs shell:)
+  sbt
+  ensimeConfig
+  M-x ensime
+
+Welcomes you with this:
+
+Welcome to ENSIME!
+
+ENSIME is more complex than a typical Emacs plugin and interacts
+with an external java application (which is downloaded by your
+build tool plugin).
+
+You are strongly recommended to read the documentation at
+
+* http://ensime.org/getting_started/
+* http://ensime.org/editors/emacs/
+* http://ensime.org/getting_help/
+
+before proceeding.
+
+We are all volunteers with our own priorities to improve ENSIME.
+Our approach to feature requests is that we will enthusiastically
+help you to implement or fix it. The ENSIME codebase is
+surprisingly easy to understand and you are invited to read the
+contributing guide and jump in: http://ensime.org/contributing/
+
+You can disable this message permanently by setting
+`ensime-startup-notification' to `nil', acknowledging
+that you have read this message.
+* The end
